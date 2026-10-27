@@ -2,8 +2,24 @@ from mini_linalg.core import Vector, Matrix
 
 
 def test_vector_creation():
-    assert Vector([1, 2, 3]).data == [1, 2, 3]
+    v = Vector([1, 2, 3])
+    assert v.data == [1, 2, 3]
 
 
 def test_matrix_creation():
-    assert Matrix([[1, 2], [3, 4]]).data == [[1, 2], [3, 4]]
+    m = Matrix([[1, 2], [3, 4]])
+    assert m.data == [[1, 2], [3, 4]]
+
+
+def test_matrix_vector_product():
+    matrix = Matrix([[1, 2], [3, 4]])
+    vector = Vector([5, 6])
+
+    assert matrix.matvec(vector).data == [17, 39]
+
+
+def test_matrix_matrix_product():
+    a = Matrix([[1, 2], [3, 4]])
+    b = Matrix([[5, 6], [7, 8]])
+
+    assert a.matmul(b).data == [[19, 22], [43, 50]]
