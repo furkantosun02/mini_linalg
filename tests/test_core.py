@@ -1,5 +1,5 @@
 import pytest
-from core import Vector, Matrix
+from mini_linalg.core import Vector, Matrix
 
 
 def test_vector_creation():
